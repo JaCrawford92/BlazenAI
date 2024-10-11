@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 const BlazeAIChat = () => {
   const [message, setMessage] = useState('');
   const [response, setResponse] = useState('');
-  const [email, setEmail] = useState(''); // Assuming user is identified by email
+  const [email, setEmail] = useState('');
 
   const sendMessage = async () => {
     try {
@@ -21,25 +21,30 @@ const BlazeAIChat = () => {
   };
 
   return (
-    <div style={{ padding: '20px' }}>
-      <h2>Chat with BlazeAI</h2>
+    <div className="p-8 bg-gray-100 min-h-screen">
+      <h2 className="text-2xl font-bold mb-4">Chat with BlazeAI</h2>
       <input
         type="email"
         placeholder="Enter your email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        style={{ padding: '10px', marginBottom: '10px', width: '100%' }}
+        className="w-full p-2 mb-4 border border-gray-300 rounded"
       />
       <textarea
         placeholder="Type your message..."
         value={message}
         onChange={(e) => setMessage(e.target.value)}
         rows="4"
-        style={{ padding: '10px', width: '100%', marginBottom: '10px' }}
+        className="w-full p-2 mb-4 border border-gray-300 rounded"
       ></textarea>
-      <button onClick={sendMessage} style={{ padding: '10px 20px' }}>Send</button>
+      <button
+        onClick={sendMessage}
+        className="bg-blue-500 text-white px-4 py-2 rounded"
+      >
+        Send
+      </button>
       {response && (
-        <div style={{ marginTop: '20px', padding: '10px', border: '1px solid #ccc' }}>
+        <div className="mt-4 p-4 bg-white border border-gray-200 rounded">
           <strong>BlazeAI:</strong>
           <p>{response}</p>
         </div>
@@ -49,3 +54,4 @@ const BlazeAIChat = () => {
 };
 
 export default BlazeAIChat;
+

@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import BlazeAIChat from './components/BlazeAIChat';
 import Profile from './components/Profile';
 import Progress from './components/Progress';
+import './index.css';
 
 const App = () => {
   return (
